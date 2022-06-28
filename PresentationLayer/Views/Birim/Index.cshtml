@@ -1,0 +1,29 @@
+﻿@using EntityLayer;
+@model List<Birim>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Birim</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Personeller</th>
+    </tr>
+@foreach (var item in Model)
+{
+<tr>
+    <td>@item.BirimAd</td>
+    <td><a href="/Birim/BirimSil/@item.Id" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Birim/BirimGuncelle/@item.Id" class="btn btn-warning">Güncelle</a></td>
+    <td><a href="/Personel/Index/@item.Id" class="btn btn-warning">Personeller</a></td>
+
+</tr>
+}
+
+</table>
+<a href="/Birim/BirimEkle" class="btn btn-info">Yeni Birim Ekle</a>
+

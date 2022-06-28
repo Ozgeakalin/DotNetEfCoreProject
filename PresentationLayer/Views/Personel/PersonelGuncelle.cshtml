@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Personel
+@{
+    ViewData["Title"] = "PersonelGuncelle";
+}
+
+<h1>PersonelGuncelle</h1>
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post)) 
+{ 
+    <div class="form-group">
+        @Html.Label("Birim Id")
+        @Html.TextBoxFor(x => x.Id, new  {@class="form-control",  @readonly = "readonly", @Name = "" })
+        <br />
+        @Html.Label("Birim Adı")
+        @Html.TextBoxFor(x=>x.Ad, new { @class = "form-control" })
+        <br />
+        @Html.Label("Birim Adı")
+        @Html.TextBoxFor(x=>x.Soyad, new { @class = "form-control" })
+        <br />
+        @Html.Label("Birim")
+        @Html.DropDownListFor(x => x.BirimId,(List<SelectListItem>)ViewBag.bl, new { @class = "form-control" })
+
+<br />
+        <button class="btn btn-success">Güncelle</button>
+
+    </div>
+}

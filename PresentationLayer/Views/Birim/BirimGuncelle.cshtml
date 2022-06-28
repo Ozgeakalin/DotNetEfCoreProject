@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Birim
+@{
+    ViewData["Title"] = "BirimGuncelle";
+}
+
+<h1>BirimGuncelle</h1>
+
+@using (Html.BeginForm("BirimGuncelle", "Birim", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Birim Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly", @Name = "" })
+        <br />
+        @Html.Label("Birim Adı")
+        @Html.TextBoxFor(x => x.BirimAd, new { @class = "form-control" })
+        <br />
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+
+    </div>
+}
